@@ -1,7 +1,7 @@
-import 'package:bizconnect_application/models/user_model.dart';
+// import 'package:bizconnect_application/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
-import 'package:flutter/widgets.dart';
+import 'package:bizconnect_application/views/widgets/build_image_explore.dart';
 
 class ExplorePage extends StatefulWidget {
   // final User user;
@@ -14,20 +14,6 @@ class ExplorePage extends StatefulWidget {
 }
 
 class _ExplorePageState extends State<ExplorePage> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 4, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,127 +77,66 @@ class _ExplorePageState extends State<ExplorePage> with SingleTickerProviderStat
           ),
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.only(top: 16),
-        child: Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            height: 350,
-            child: ListView(
-              shrinkWrap: false,
-              scrollDirection: Axis.horizontal,
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 16),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  height: 360,
+                  child: ListView(
+                    shrinkWrap: false,
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      buildImageWidget('assets/image1.png'),
+                      buildImageWidget('assets/image2.png'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Row(
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Stack(
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(right: 16),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              'assets/image1.png',
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 16,
-                          left: 16,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.5),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              'Tulisan di dalam gambar 3 yang panjang dan akan wrap jika melebihi batas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis, 
-                              maxLines: 2, 
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(right: 16),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              'assets/image1.png',
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 16,
-                          left: 16,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.5),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              'Tulisan di dalam gambar 3 yang panjang dan akan wrap jika melebihi batas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Stack(
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(right: 16),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              'assets/image1.png',
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 16,
-                          left: 16,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.5),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              'Tulisan di dalam gambar 3 yang panjang dan akan wrap jika melebihi batas',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2, 
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start, // Atur posisi ke atas
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: buildImageWidget('assets/image3.png'),
+                      ),
+                      SizedBox(height: 16), // Jarak antara gambar
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: buildImageWidget('assets/image4.png'),
+                      ),
+                      SizedBox(height: 16), // Jarak antara gambar
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start, // Atur posisi ke atas
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: buildImageWidget('assets/image5.png'),
+                      ),
+                      SizedBox(height: 16), // Jarak antara gambar
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: buildImageWidget('assets/image6.png'),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavBar(
@@ -220,3 +145,4 @@ class _ExplorePageState extends State<ExplorePage> with SingleTickerProviderStat
     );
   }
 }
+
