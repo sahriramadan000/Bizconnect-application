@@ -130,7 +130,7 @@ class _NotificationPageState extends State<NotificationPage> with SingleTickerPr
         ),
       ),
       bottomNavigationBar: BottomNavBar(
-        selectedIndex: 1,
+        selectedIndex: 2,
       ),
     );
   }

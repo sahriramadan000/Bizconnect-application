@@ -1,4 +1,5 @@
 // import 'package:bizconnect_application/models/user_model.dart';
+import 'package:bizconnect_application/views/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
 import 'package:bizconnect_application/views/widgets/tab_home.dart';
@@ -30,52 +31,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF17191A),
-      appBar: AppBar(
-        backgroundColor: Color(0xFF17191A),
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: Image.asset('assets/logo.png'),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-            color: Color(0xFF9FA1A4),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: Stack(
-              children: [
-                ClipOval(
-                  child: Image.asset(
-                    'assets/user1.png',
-                    width: 40,
-                    height: 40,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  top: -4,
-                  right: -4,
-                  child: Container(
-                    width: 17,
-                    height: 17,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFF2AEF0A),
-                      border: Border.all(
-                        color: Color(0xFF17191A),
-                        width: 4,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(withLogo: true),
       body: Column(
         children: [
           Padding(
