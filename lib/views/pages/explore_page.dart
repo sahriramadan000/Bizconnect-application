@@ -19,7 +19,7 @@ class _ExplorePageState extends State<ExplorePage> with SingleTickerProviderStat
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF17191A),
-      appBar: CustomAppBar(withLogo: false, textHead: 'Explore',),
+      appBar: CustomAppBar(withLogo: false, textHead: 'Explore'),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

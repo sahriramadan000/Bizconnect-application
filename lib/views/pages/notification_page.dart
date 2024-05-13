@@ -1,6 +1,7 @@
+import 'package:bizconnect_application/views/widgets/app_bar.dart';
+import 'package:bizconnect_application/views/widgets/card_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
-import 'package:bizconnect_application/views/widgets/build_image_explore.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -14,118 +15,44 @@ class _NotificationPageState extends State<NotificationPage> with SingleTickerPr
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF17191A),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFF17191A),
-        elevation: 0,
-        title:  Row(
-          children: [
-            Text(
-              'Explore',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(width: 8),
-            Icon(
-              Icons.keyboard_arrow_down,
-              color: Colors.white,
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-            color: Color(0xFF9FA1A4),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: Stack(
-              children: [
-                ClipOval(
-                  child: Image.asset(
-                    'assets/user1.png',
-                    width: 40,
-                    height: 40,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  top: -4,
-                  right: -4,
-                  child: Container(
-                    width: 17, 
-                    height: 17, 
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFF2AEF0A), 
-                      border: Border.all(
-                        color: Color(0xFF17191A),
-                        width: 4,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(withLogo: false, textHead: 'Filters'),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: 16, bottom: 20),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  height: 360,
-                  child: ListView(
-                    shrinkWrap: false,
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      SizedBox(width: 16),
-                      buildImageWidget('assets/image1.png', 250, 360),
-                      SizedBox(width: 16),
-                      buildImageWidget('assets/image2.png', 250, 360),
-                    ],
-                  ),
-                ),
-              ),
+            SizedBox(height: 8),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/fire.png', 'Trending', 'Your Post is Trending in the hot Section', '9.56 AM'),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      buildImageWidget('assets/image3.png', 172, 250),
-                      SizedBox(height: 16),
-                      buildImageWidget('assets/image6.png', 172, 180),
-                      SizedBox(height: 16),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      buildImageWidget('assets/image5.png', 172, 180),
-                      SizedBox(height: 16),
-                      buildImageWidget('assets/image4.png', 172, 250),
-                    ],
-                  ),
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/love.png', 'Trending', 'Your Post is Trending in the hot Section', '9.56 AM'),
             ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/message.png', 'Comment', 'Someone commented on your post: Around Heavy ball floor these lang....', '9.56 AM'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/love.png', 'Trending', 'Your Post is Trending in the Fun Section', '9.56 AM'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/arrow_up.png', 'Upvote', 'Someone Upvote on your post: Around Heavy ball floor these languag....', '9.56 AM'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/message.png', 'Comment', 'Someone commented on your post: Around Heavy ball floor these lang....', '9.56 AM'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/love.png', 'Trending', 'Your Post is Trending in the Fun Section', '9.56 AM'),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 4),
+              child: buildCardNotification('assets/arrow_up.png', 'Upvote', 'Someone Upvote on your post: Around Heavy ball floor these languag....', '9.56 AM'),
+            ),
+            SizedBox(height: 8),
           ],
         ),
       ),
@@ -135,4 +62,3 @@ class _NotificationPageState extends State<NotificationPage> with SingleTickerPr
     );
   }
 }
-
