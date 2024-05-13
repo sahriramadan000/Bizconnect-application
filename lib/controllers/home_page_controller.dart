@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/models/user_model.dart';
-import 'package:bizconnect_application/views/home_page.dart';
+import 'package:bizconnect_application/views/pages/home_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

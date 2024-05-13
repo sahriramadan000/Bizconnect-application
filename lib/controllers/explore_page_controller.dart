@@ -1,4 +1,4 @@
-import 'package:bizconnect_application/views/explore_page.dart';
+import 'package:bizconnect_application/views/pages/explore_page.dart';
 import 'package:flutter/material.dart';
 
 class ExplorePageController extends StatefulWidget {

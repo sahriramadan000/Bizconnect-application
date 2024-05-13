@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
 import 'package:bizconnect_application/views/widgets/tab_home.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
 

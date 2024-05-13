@@ -1,4 +1,4 @@
-import 'package:bizconnect_application/views/notification_page.dart';
+import 'package:bizconnect_application/views/pages/notification_page.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPageController extends StatefulWidget {

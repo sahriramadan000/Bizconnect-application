@@ -1,4 +1,3 @@
-// import 'package:bizconnect_application/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
 import 'package:bizconnect_application/views/widgets/build_image_explore.dart';
