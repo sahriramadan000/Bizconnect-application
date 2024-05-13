@@ -1,3 +1,4 @@
+import 'package:bizconnect_application/controllers/connection_page_controller.dart';
 import 'package:bizconnect_application/controllers/explore_page_controller.dart';
 import 'package:bizconnect_application/controllers/home_page_controller.dart';
 import 'package:bizconnect_application/controllers/notification_page_controller.dart';
@@ -10,5 +11,6 @@ class Routes {
     '/homepage': (BuildContext context) => HomePageController(),
     '/explore': (BuildContext context) => ExplorePageController(),
     '/notification': (BuildContext context) => NotificationPageController(),
+    '/connection': (BuildContext context) => ConnectionPageController(),
   };
 }

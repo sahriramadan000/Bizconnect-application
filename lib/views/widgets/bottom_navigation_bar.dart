@@ -27,7 +27,7 @@ class NavigationController {
   void navigateToConnection(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Routes.routes['/homepage']!(context)),
+      MaterialPageRoute(builder: (context) => Routes.routes['/connection']!(context)),
     );
   }
 }
