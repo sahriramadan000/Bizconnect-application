@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
-Widget buildImageWidget(String imagePath) {
-  return Stack(
-    children: <Widget>[
-      Padding(
-        padding: EdgeInsets.only(left: 16),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(imagePath),
-        ),
+Widget buildImageWidget(String imagePath, double? width, double? height) {
+  final double defaultWidth = 150;
+  final double defaultHeight = 150;
+  width ??= defaultWidth;
+  height ??= defaultHeight;
+
+  return Container(
+    width:  width,
+    height:  height,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      image: DecorationImage(
+        image: AssetImage(imagePath),
+        fit: BoxFit.cover,
       ),
-    ],
+    ),
+    padding: EdgeInsets.only(left: 16),
   );
 }

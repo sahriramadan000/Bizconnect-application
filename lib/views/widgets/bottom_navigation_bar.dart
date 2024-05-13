@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
-import 'package:bizconnect_application/controllers/explorepage_controller.dart';
-import 'package:bizconnect_application/controllers/homepage_controller.dart';
+import 'package:bizconnect_application/routes/routes.dart';
 
 class NavigationController {
   void navigateToHome(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomePageController()),
+      MaterialPageRoute(builder: (context) => Routes.routes['/homepage']!(context)),
     );
   }
 
   void navigateToExplore(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      MaterialPageRoute(builder: (context) => Routes.routes['/explore']!(context)),
     );
   }
 
   void navigateToNotification(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      MaterialPageRoute(builder: (context) => Routes.routes['/notification']!(context)),
     );
   }
 
   void navigateToConnection(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      MaterialPageRoute(builder: (context) => Routes.routes['/homepage']!(context)),
     );
   }
 }
@@ -103,8 +102,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
               setState(() {
                 selectedIndex = index;
               });
-
-              // print("Navigasi ke indeks: $index");
 
               if (index == 0) {
                 navigationController.navigateToHome(context);

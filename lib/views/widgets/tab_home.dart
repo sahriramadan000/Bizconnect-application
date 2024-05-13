@@ -37,9 +37,9 @@ class _MyTabState extends State<MyTab> {
       padding: EdgeInsets.all(10),
       child: Column(
         children: [
-          SizedBox(height: 16), // Jarak ke bawah
+          SizedBox(height: 16),
           Padding(
-            padding: EdgeInsets.only(left: 16), // Atur margin kiri sesuai kebutuhan
+            padding: EdgeInsets.only(left: 16),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -52,7 +52,7 @@ class _MyTabState extends State<MyTab> {
               ),
             ),
           ),
-          SizedBox(height: 8), // Jarak ke bawah
+          SizedBox(height: 8),
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
@@ -92,7 +92,7 @@ class _MyTabState extends State<MyTab> {
                                       ),
                                     ),
                                     Text(
-                                      widget.subtitle, // Ganti dengan judul posting yang sesuai
+                                      widget.subtitle,
                                       style: TextStyle(
                                         fontSize: 14,
                                         color: Colors.white,
@@ -209,7 +209,7 @@ class _MyTabState extends State<MyTab> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 16), // Jarak ke bawah
+                    SizedBox(height: 16),
                   ],
                 );
               },

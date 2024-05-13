@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:bizconnect_application/controllers/homepage_controller.dart';
-
+import 'package:bizconnect_application/routes/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,8 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePageController(),
-        ), 
+          MaterialPageRoute(builder: (context) => Routes.routes['/homepage']!(context)),
       );
     });
   }
@@ -29,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: 150,
         width: 150,
       ),
-      nextScreen: HomePageController(),
+      nextScreen: Routes.routes['/homepage']!(context),
       splashTransition: SplashTransition.fadeTransition,
       backgroundColor: Color(0xFF17191A),
       duration: 3000,

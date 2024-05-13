@@ -3,17 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:bizconnect_application/views/widgets/bottom_navigation_bar.dart';
 import 'package:bizconnect_application/views/widgets/build_image_explore.dart';
 
-class ExplorePage extends StatefulWidget {
-  // final User user;
-
-  // const ExplorePage({Key? key, required this.user}) : super(key: key);
-  const ExplorePage({Key? key}) : super(key: key);
+class NotificationPage extends StatefulWidget {
+  const NotificationPage({Key? key}) : super(key: key);
 
   @override
-  _ExplorePageState createState() => _ExplorePageState();
+  _NotificationPageState createState() => _NotificationPageState();
 }
 
-class _ExplorePageState extends State<ExplorePage> with SingleTickerProviderStateMixin {
+class _NotificationPageState extends State<NotificationPage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
