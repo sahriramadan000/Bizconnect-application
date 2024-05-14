@@ -13,7 +13,7 @@ Widget buildCardConnection(String imagePath, String title, String subtitle, bool
           children: [
             ClipOval(
               child: Image.asset(
-                'assets/user1.png',
+                imagePath,
                 width: 40,
                 height: 40,
                 fit: BoxFit.cover,
@@ -43,7 +43,7 @@ Widget buildCardConnection(String imagePath, String title, String subtitle, bool
         title,
         style: TextStyle(
           color: Color(0xFFFFFFFF),
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w600,
         ),
       ),
       subtitle: Text(

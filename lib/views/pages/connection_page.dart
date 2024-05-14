@@ -19,23 +19,71 @@ class _ConnectionPageState extends State<ConnectionPage> with SingleTickerProvid
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 8),
-            Text(
-                'Category 1',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+            SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.only(left: 16),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Suggestions',
+                  style: TextStyle(
+                    color: Color(0xFFDCDCDC),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  ),
                 ),
               ),
+            ),
             SizedBox(height: 8),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 4),
-              child: buildCardConnection('assets/fire.png', 'Lydia Gouse', 'Business Owner', true, false),
+              margin: EdgeInsets.symmetric(vertical: 0),
+              child: buildCardConnection('assets/user2.png', 'Lydia Gouse', 'Business Owner', true, false),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 4),
-              child: buildCardConnection('assets/love.png', 'Clara Benville', 'Sales Representative Manager', false, false),
+              margin: EdgeInsets.symmetric(vertical: 0),
+              child: buildCardConnection('assets/user3.png', 'Clara Benville', 'Sales Representative Manager', true, false),
+            ),
+            SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'More',
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 2),
+                  child: Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 18,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                ), 
+              ],
+            ),
+            SizedBox(height: 30),
+            Padding(
+              padding: EdgeInsets.only(left: 16),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Your conversations',
+                  style: TextStyle(
+                    color: Color(0xFFDCDCDC),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 0),
+              child: buildCardConnection('assets/user2.png', 'Lydia Gouse', 'May you agree to attend this meetin...', false, true),
             ),
             SizedBox(height: 8),
           ],
