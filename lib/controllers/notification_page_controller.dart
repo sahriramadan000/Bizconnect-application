@@ -14,6 +14,6 @@ class _NotificationPageControllerState extends State<NotificationPageController>
 
   @override
   Widget build(BuildContext context) {
-      return NotificationPage();
+    return NotificationPage();
   }
 }

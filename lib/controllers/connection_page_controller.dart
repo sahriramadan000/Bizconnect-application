@@ -14,6 +14,6 @@ class _ConnectionPageControllerState extends State<ConnectionPageController> {
 
   @override
   Widget build(BuildContext context) {
-      return ConnectionPage();
+    return ConnectionPage();
   }
 }

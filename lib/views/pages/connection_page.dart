@@ -20,6 +20,15 @@ class _ConnectionPageState extends State<ConnectionPage> with SingleTickerProvid
         child: Column(
           children: <Widget>[
             SizedBox(height: 8),
+            Text(
+                'Category 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            SizedBox(height: 8),
             Container(
               margin: EdgeInsets.symmetric(vertical: 4),
               child: buildCardConnection('assets/fire.png', 'Lydia Gouse', 'Business Owner', true, false),
