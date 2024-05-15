@@ -5,7 +5,7 @@ class LoginPage extends StatelessWidget {
   Widget login(String icon, double width) {
     return Container(
       height: 50,
-      width: 115,
+      width: 100,
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
         border: Border.all(color: Colors.grey.withOpacity(0.4), width: 1),
@@ -22,23 +22,26 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget userInput(String hintTitle, TextInputType keyboardType) {
-    return Container(
-      height: 55,
-      margin: EdgeInsets.only(bottom: 15),
-      decoration: BoxDecoration(color: Color(0xFFFFFFFF), borderRadius: BorderRadius.circular(10)),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 40.0, top: 15, right: 40),
-        child: TextField(
-          autocorrect: false,
-          enableSuggestions: false,
-          autofocus: false,
-          decoration: InputDecoration.collapsed(
-            hintText: hintTitle,
-            hintStyle: TextStyle(fontSize: 14, color: const Color(0xFFC5C8C9)),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Container(
+        height: 55,
+        margin: EdgeInsets.only(bottom: 15),
+        decoration: BoxDecoration(color: Color(0xFFFFFFFF), borderRadius: BorderRadius.circular(10)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 30, top: 15, right: 30),
+          child: TextField(
+            autocorrect: false,
+            enableSuggestions: false,
+            autofocus: false,
+            decoration: InputDecoration.collapsed(
+              hintText: hintTitle,
+              hintStyle: TextStyle(fontSize: 14, color: const Color(0xFFC5C8C9)),
+            ),
+            keyboardType: keyboardType,
           ),
-          keyboardType: keyboardType,
         ),
-      ),
+      ),  
     );
   }
 
@@ -102,19 +105,24 @@ class LoginPage extends StatelessWidget {
                     userInput('Email', TextInputType.emailAddress),
                     userInput('Password', TextInputType.visiblePassword),
                     SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        'Forgot password ?',
-                        style: TextStyle(
-                          color: Color(0xFFF1F1F1),
-                          fontSize: 12,
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Forgot password ?',
+                            style: TextStyle(
+                              color: Color(0xFFF1F1F1),
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
                       height: 55,
-                      padding: const EdgeInsets.only(top: 5),
+                      padding: const EdgeInsets.only(top: 5, left: 10, right: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -171,9 +179,9 @@ class LoginPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          login('assets/icon-facebook.png', 30),
                           login('assets/icon-google.png', 15),
                           login('assets/icon-apple.png', 30),
+                          login('assets/icon-facebook.png', 30),
                         ],
                       ),
                     ),
