@@ -1,6 +1,6 @@
-import 'package:bizconnect_application/views/explore_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bizconnect_application/models/user_model.dart';
+import 'package:bizconnect_application/views/pages/home_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -17,12 +17,12 @@ Future<User> fetchUserModel() async {
   }
 }
 
-class ExplorePageController extends StatefulWidget {
+class HomePageController extends StatefulWidget {
   @override
-  _ExplorePageControllerState createState() => _ExplorePageControllerState();
+  _HomePageControllerState createState() => _HomePageControllerState();
 }
 
-class _ExplorePageControllerState extends State<ExplorePageController> {
+class _HomePageControllerState extends State<HomePageController> {
   // late User _user;
   // bool _isLoading = false;
   // String _errorMessage = '';
@@ -54,7 +54,7 @@ class _ExplorePageControllerState extends State<ExplorePageController> {
   @override
   Widget build(BuildContext context) {
     // if (_isLoading) {
-    //   return Center(
+    //    return Center(
     //     child: Column(
     //       mainAxisAlignment: MainAxisAlignment.center,
     //       children: [
@@ -67,8 +67,8 @@ class _ExplorePageControllerState extends State<ExplorePageController> {
     // } else if (_errorMessage.isNotEmpty) {
     //   return Center(child: Text(_errorMessage));
     // } else {
-    //   return ExplorePage(user: _user);
+      // return HomePage(user: _user);
+      return HomePage();
     // }
-      return ExplorePage();
   }
 }

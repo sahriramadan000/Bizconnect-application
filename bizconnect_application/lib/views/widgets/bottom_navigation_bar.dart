@@ -1,34 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
-import 'package:bizconnect_application/controllers/explorepage_controller.dart';
-import 'package:bizconnect_application/controllers/homepage_controller.dart';
+import 'package:bizconnect_application/routes/routes.dart';
 
 class NavigationController {
   void navigateToHome(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomePageController()),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            Routes.routes['/homepage']!(context),
+        transitionDuration: Duration.zero,
+      ),
     );
   }
 
   void navigateToExplore(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            Routes.routes['/explore']!(context),
+        transitionDuration: Duration.zero,
+      ),
     );
   }
 
   void navigateToNotification(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            Routes.routes['/notification']!(context),
+        transitionDuration: Duration.zero,
+      ),
     );
   }
 
   void navigateToConnection(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ExplorePageController()),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            Routes.routes['/connection']!(context),
+        transitionDuration: Duration.zero,
+      ),
     );
   }
 }
@@ -54,57 +69,59 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
-    double bottomNavBarHeight = 70.0;
+    double bottomNavBarHeight = 65.0;
 
     return ClipRRect(
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(20.0),
         topRight: Radius.circular(20.0),
       ),
-      child: DefaultTextStyle(
-        style: TextStyle(
-          fontFamily: 'Roboto',
-          fontWeight: FontWeight.w500,
-          fontSize: 12.0,
-        ),
-        child: SizedBox(
-          height: bottomNavBarHeight,
+      child: Container(
+        height: bottomNavBarHeight,
+        color: Color(0xFF404144),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 5),
           child: SlidingClippedNavBar.colorful(
             fontStyle: FontStyle.normal,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            iconSize: 27,
             backgroundColor: const Color(0xFF404144),
             barItems: [
               BarItem(
                 icon: Icons.home_outlined,
                 title: 'Home',
-                activeColor: Colors.white70,
-                inactiveColor: Colors.grey[200],
+                activeColor: Colors.white,
+                inactiveColor: Color(0xFFAEB1B4),
               ),
               BarItem(
                 icon: Icons.track_changes_outlined,
                 title: 'Explore',
-                activeColor: Colors.white70,
-                inactiveColor: Colors.grey[200],
+                activeColor: Colors.white,
+                inactiveColor: Color(0xFFAEB1B4),
               ),
               BarItem(
                 icon: Icons.notifications_none_outlined,
                 title: 'Notification',
-                activeColor: Colors.white70,
-                inactiveColor: Colors.grey[200],
+                activeColor: Colors.white,
+                inactiveColor: Color(0xFFAEB1B4),
               ),
               BarItem(
                 icon: Icons.device_hub_outlined,
                 title: 'Connection',
-                activeColor: Colors.white70,
-                inactiveColor: Colors.grey[200],
+                activeColor: Colors.white,
+                inactiveColor: Color(0xFFAEB1B4),
               ),
             ],
             selectedIndex: selectedIndex,
             onButtonPressed: (index) {
+              if (index == selectedIndex) {
+                return;
+              }
+
               setState(() {
                 selectedIndex = index;
               });
-
-              // print("Navigasi ke indeks: $index");
 
               if (index == 0) {
                 navigationController.navigateToHome(context);
