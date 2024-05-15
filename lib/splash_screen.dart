@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Routes.routes['/homepage']!(context)),
+          MaterialPageRoute(builder: (context) => Routes.routes['/login']!(context)),
       );
     });
   }
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: 150,
         width: 150,
       ),
-      nextScreen: Routes.routes['/homepage']!(context),
+      nextScreen: Routes.routes['/login']!(context),
       splashTransition: SplashTransition.fadeTransition,
       backgroundColor: Color(0xFF17191A),
       duration: 3000,
