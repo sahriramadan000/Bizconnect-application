@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget userInput(String hintTitle, TextInputType keyboardType) {
+  Widget userInput(IconData Icons, String hintTitle, TextInputType keyboardType) {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: Container(
@@ -29,19 +29,31 @@ class LoginPage extends StatelessWidget {
         margin: EdgeInsets.only(bottom: 15),
         decoration: BoxDecoration(color: Color(0xFFFFFFFF), borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: const EdgeInsets.only(left: 30, top: 15, right: 30),
-          child: TextField(
-            autocorrect: false,
-            enableSuggestions: false,
-            autofocus: false,
-            decoration: InputDecoration.collapsed(
-              hintText: hintTitle,
-              hintStyle: TextStyle(fontSize: 14, color: const Color(0xFFC5C8C9)),
-            ),
-            keyboardType: keyboardType,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            children: [
+              Icon(
+                Icons,
+                color: Color(0xFFC5C8C9),
+                size: 25,
+              ),
+              SizedBox(width: 10),
+              Expanded(
+                child: TextField(
+                  autocorrect: false,
+                  enableSuggestions: false,
+                  autofocus: false,
+                  decoration: InputDecoration.collapsed(
+                    hintText: hintTitle,
+                    hintStyle: TextStyle(fontSize: 14, color: const Color(0xFFC5C8C9)),
+                  ),
+                  keyboardType: keyboardType,
+                ),
+              ),
+            ],
           ),
         ),
-      ),  
+      ),
     );
   }
 
@@ -102,8 +114,8 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 35),
-                    userInput('Email', TextInputType.emailAddress),
-                    userInput('Password', TextInputType.visiblePassword),
+                    userInput(Icons.person, 'Email / Username', TextInputType.emailAddress),
+                    userInput(Icons.lock_outlined, 'Password', TextInputType.visiblePassword),
                     SizedBox(height: 10),
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
